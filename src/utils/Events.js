@@ -1,9 +1,5 @@
 'use strict';
 
-var bind = window.addEventListener ? 'addEventListener' : 'attachEvent';
-var unbind = window.removeEventListener ? 'removeEventListener' : 'detachEvent';
-var prefix = bind !== 'addEventListener' ? 'on' : '';
-
 
 var events = {
   one: function(node, eventNames, eventListener) {
@@ -31,6 +27,9 @@ var events = {
    */
 
   on: function(node, eventName, eventListener, capture) {
+var bind = window.addEventListener ? 'addEventListener' : 'attachEvent';
+var unbind = window.removeEventListener ? 'removeEventListener' : 'detachEvent';
+var prefix = bind !== 'addEventListener' ? 'on' : '';
     node[bind](prefix + eventName, eventListener, capture || false);
 
     return {
@@ -53,6 +52,9 @@ var events = {
    */
 
   off: function(node, eventName, eventListener, capture) {
+var bind = window.addEventListener ? 'addEventListener' : 'attachEvent';
+var unbind = window.removeEventListener ? 'removeEventListener' : 'detachEvent';
+var prefix = bind !== 'addEventListener' ? 'on' : '';
     node[unbind](prefix + eventName, eventListener, capture || false);
     return eventListener;
   }

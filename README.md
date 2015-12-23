@@ -1,5 +1,7 @@
 # Amaze UI React
 
+修正官方无法服务器段渲染问题，待官方解决
+
 [Amaze UI][amazeui] components build with React.
 
 基于 [Amaze UI][amazeui] 和 React.js 封装的 Web 组件库。
